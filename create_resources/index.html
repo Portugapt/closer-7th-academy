@@ -1,0 +1,950 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../client_libs_py/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+    
+    
+      
+        <title>Create Resources - Closer Academy | GCP</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#create-resources-tablesbucketstopics-within-gcp" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Closer Academy | GCP" class="md-header__button md-logo" aria-label="Closer Academy | GCP" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Closer Academy | GCP
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Create Resources
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Portugapt/closer-7th-academy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Closer Academy Google Cloud Platform
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Index
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="./" class="md-tabs__link md-tabs__link--active">
+      Create Resources
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../client_libs_py/" class="md-tabs__link">
+      Client Libraries (Python)
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../manual_exercises/titanic/" class="md-tabs__link">
+        Manual Exercises
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Closer Academy | GCP" class="md-nav__button md-logo" aria-label="Closer Academy | GCP" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Closer Academy | GCP
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Portugapt/closer-7th-academy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Closer Academy Google Cloud Platform
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Create Resources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Create Resources
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#buckets-ui" class="md-nav__link">
+    Buckets (UI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Buckets (UI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-google-cloud-storage-gcs" class="md-nav__link">
+    What is Google Cloud Storage (GCS)?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bigquery-data-sets-and-tables-ui" class="md-nav__link">
+    Bigquery Data Sets and Tables (UI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Bigquery Data Sets and Tables (UI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-bigquery" class="md-nav__link">
+    What is Bigquery?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-schema" class="md-nav__link">
+    JSON Schema
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pubsub-topics-ui" class="md-nav__link">
+    Pub/Sub Topics (UI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Pub/Sub Topics (UI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-publisher-subscriber-pattern" class="md-nav__link">
+    What is the Publisher-Subscriber pattern?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-google-pubsub" class="md-nav__link">
+    What is Google Pub/Sub?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-cloud-functions-gcloud" class="md-nav__link">
+    Deploy Cloud Functions (gcloud)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client_libs_py/" class="md-nav__link">
+        Client Libraries (Python)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Manual Exercises
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Manual Exercises
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual_exercises/titanic/" class="md-nav__link">
+        Dataset
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual_exercises/ex1/" class="md-nav__link">
+        Exercise 1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual_exercises/ex2/" class="md-nav__link">
+        Exercise 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual_exercises/ex3/" class="md-nav__link">
+        Exercise 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manual_exercises/ex4/" class="md-nav__link">
+        Exercise 4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#buckets-ui" class="md-nav__link">
+    Buckets (UI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Buckets (UI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-google-cloud-storage-gcs" class="md-nav__link">
+    What is Google Cloud Storage (GCS)?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bigquery-data-sets-and-tables-ui" class="md-nav__link">
+    Bigquery Data Sets and Tables (UI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Bigquery Data Sets and Tables (UI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-bigquery" class="md-nav__link">
+    What is Bigquery?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-schema" class="md-nav__link">
+    JSON Schema
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pubsub-topics-ui" class="md-nav__link">
+    Pub/Sub Topics (UI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Pub/Sub Topics (UI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-is-the-publisher-subscriber-pattern" class="md-nav__link">
+    What is the Publisher-Subscriber pattern?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-google-pubsub" class="md-nav__link">
+    What is Google Pub/Sub?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-cloud-functions-gcloud" class="md-nav__link">
+    Deploy Cloud Functions (gcloud)
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="create-resources-tablesbucketstopics-within-gcp">Create Resources (Tables/Buckets/Topics) within GCP<a class="headerlink" href="#create-resources-tablesbucketstopics-within-gcp" title="Permanent link">&para;</a></h1>
+<h2 id="buckets-ui">Buckets (UI)<a class="headerlink" href="#buckets-ui" title="Permanent link">&para;</a></h2>
+<blockquote>
+<h3 id="what-is-google-cloud-storage-gcs">What is Google Cloud Storage (GCS)?<a class="headerlink" href="#what-is-google-cloud-storage-gcs" title="Permanent link">&para;</a></h3>
+<p>Google Cloud Storage (GCS) is a scalable, fully-managed, and highly available object storage service provided by Google Cloud Platform. It allows users to store, access, and manage data across multiple storage classes, catering to various use cases like backup, archival, and content delivery. GCS ensures data durability and offers seamless integration with other Google Cloud services.</p>
+</blockquote>
+<ol>
+<li>
+<p>Search for the Cloud Storage in the Search bar.</p>
+<p><img alt="buckets-1" src="https://i.imgur.com/voKVC6X.png" /></p>
+</li>
+<li>
+<p>In the Cloud Storage UI, you'll notice there are no buckets created yet. To create one, click the <code>CREATE</code> button.</p>
+<p><img alt="buckets-2" src="https://i.imgur.com/kYTszb3.png" /></p>
+</li>
+<li>
+<p>Configurate your bucket</p>
+<p><img alt="buckets-3-1" src="https://i.imgur.com/J3daANw.png" /></p>
+<ol>
+<li>Name your bucket and click Continue.</li>
+<li>Change the storage class from Multi-region to Region. Set the location to europe-west3, as shown in the image, and click Continue.</li>
+<li>Keep the remaining settings as they are.</li>
+<li>Click create.</li>
+</ol>
+<p>Your configuration should look like this:</p>
+<p><img alt="buckets-4" src="https://i.imgur.com/vCD4BsS.png" /></p>
+<p>If this popup appears, leave the settings as they are.</p>
+<p><img alt="buckets-pupup1" src="https://i.imgur.com/nty5chF.png" /></p>
+</li>
+</ol>
+<p>And now you have your bucket!</p>
+<p><img alt="buckets-created" src="https://i.imgur.com/ZXLrCRL.png" /></p>
+<p>Alternatively, you can create a bucket using <a href="https://cloud.google.com/storage/docs/creating-buckets#storage-create-bucket-python">Python</a>, other Client Libraries, or even advanced Infrastructure-as-Code tools like <a href="https://cloud.google.com/storage/docs/creating-buckets#storage-create-bucket-terraform">Terraform</a> or <a href="https://www.pulumi.com/registry/packages/gcp/api-docs/storage/bucket/">Pulumi</a>.</p>
+<h2 id="bigquery-data-sets-and-tables-ui">Bigquery Data Sets and Tables (UI)<a class="headerlink" href="#bigquery-data-sets-and-tables-ui" title="Permanent link">&para;</a></h2>
+<blockquote>
+<h3 id="what-is-bigquery">What is Bigquery?<a class="headerlink" href="#what-is-bigquery" title="Permanent link">&para;</a></h3>
+<p>BigQuery is a fully-managed, serverless, petabyte-scale data warehouse by Google Cloud Platform. It enables super-fast SQL queries using the processing power of Google's infrastructure, allowing users to analyze large datasets in real-time. BigQuery is designed for scalability, ease of use, and integration with other Google Cloud services.</p>
+</blockquote>
+<p>Tables are always associated with a <code>data set</code>. First, let's create a <code>data set</code>.</p>
+<ol>
+<li>Go to BigQuery:</li>
+</ol>
+<p><img alt="bq-1" src="https://i.imgur.com/Qvhqno3.png" /></p>
+<ol>
+<li>Click the bullet points icon next to the project name:</li>
+</ol>
+<p><img alt="bq-2" src="https://i.imgur.com/bHct9F7.png" /></p>
+<ol>
+<li>Name your data set, change the region, and click <code>CREATE DATA SET</code>:</li>
+</ol>
+<p><img alt="bq-3" src="https://i.imgur.com/47HuJ0A.png" /></p>
+<pre><code>Congratulations! You have a `data set`!
+
+Now, let's create a table:
+</code></pre>
+<ol>
+<li>Click the bullets icon next to your data set, and click <em>Create Table</em>:</li>
+</ol>
+<p><img alt="bq-4" src="https://i.imgur.com/TKcNkJX.png" /></p>
+<ol>
+<li>Configure your table settings:</li>
+</ol>
+<p><img alt="bq-5" src="https://i.imgur.com/jdLc4oo.png" /></p>
+<pre><code>Alternatively, you can define the schema using `JSON`:
+
+![bq-6](https://i.imgur.com/UcDK3uC.png)
+</code></pre>
+<p>And now you have a table too!</p>
+<p>Remember the location of the <u><strong>Table ID</strong></u>; you might need it later:</p>
+<p><img alt="bq-7" src="https://i.imgur.com/VPfsOJQ.png" /></p>
+<p>Learn more about tables in the <a href="https://cloud.google.com/bigquery/docs/tables">documentation</a>.</p>
+<p>You can also create Tables with Infrastructure-As-Code tools. Here are the examples for <a href="https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/bigquery_table">Terraform</a> and for the several <a href="https://www.pulumi.com/registry/packages/gcp/api-docs/bigquery/table/">Clients for Pulumi</a></p>
+<h3 id="json-schema">JSON Schema<a class="headerlink" href="#json-schema" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Why should you use JSON schemas when possible?</p>
+<ol>
+<li>
+<p>Structure and consistency: JSON schemas define the structure of your data, ensuring consistency across all records in the table. This helps maintain data integrity and makes it easier to query and analyze the data.</p>
+</li>
+<li>
+<p>Validation: By specifying a schema, you can enforce data validation rules, such as data types and required fields, ensuring that only valid data is inserted into the table. This can prevent issues caused by incorrect or incomplete data.</p>
+</li>
+<li>
+<p>Readability: JSON schemas provide a clear and human-readable description of the table's structure, making it easier for team members to understand the data and its organization</p>
+</li>
+<li>
+<p>Interoperability: JSON schemas are a standardized format, which makes it simpler to share and exchange table structures across teams and different systems. This is particularly useful when integrating with other tools or platforms that support JSON schema.</p>
+</li>
+<li>
+<p>Easier data import: When importing data from files (e.g., CSV or JSON) into BigQuery, providing a JSON schema allows BigQuery to map the file's data correctly to the table's columns, preventing import errors and ensuring data consistency.</p>
+</li>
+</ol>
+</blockquote>
+<p>Here's an example of a JSON schema:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_required_text_field&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STRING&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;REQUIRED&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A text field&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_required_integer_field&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INTEGER&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NULLABLE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;An integer field&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_nullable_boolean_field&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BOOLEAN&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NULLABLE&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A boolean field&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>You can also find it in the folder <code>./infrastructure/bigquery/example_schema.json</code>.</p>
+<p>You can fiend more about how to define JSON schemas in the <a href="https://cloud.google.com/bigquery/docs/schemas#specifying_a_json_schema_file">Google Documentation</a>.</p>
+<hr />
+<h2 id="pubsub-topics-ui">Pub/Sub Topics (UI)<a class="headerlink" href="#pubsub-topics-ui" title="Permanent link">&para;</a></h2>
+<blockquote>
+<h4 id="what-is-the-publisher-subscriber-pattern">What is the Publisher-Subscriber pattern?<a class="headerlink" href="#what-is-the-publisher-subscriber-pattern" title="Permanent link">&para;</a></h4>
+<pre><code>  The publisher-subscriber (pub-sub) messaging pattern is a communication paradigm where messages are sent by publishers to multiple subscribers, without requiring direct connections between them. Publishers broadcast messages to topics, and subscribers listen to topics they are interested in. This pattern provides a decoupled architecture, allowing for scalability, flexibility, and fault tolerance. Subscribers receive messages asynchronously, enabling them to process events independently, without blocking or waiting for other subscribers. The pub-sub pattern is widely used in distributed systems, event-driven architectures, and messaging applications.
+</code></pre>
+<h4 id="what-is-google-pubsub">What is Google Pub/Sub?<a class="headerlink" href="#what-is-google-pubsub" title="Permanent link">&para;</a></h4>
+<pre><code>  Google Pub/Sub is a real-time messaging service based on the publisher-subscriber pattern, designed for Google Cloud Platform. It enables reliable, scalable, and asynchronous event-driven communication between microservices, applications, and data streams, promoting decoupled and flexible architectures.
+</code></pre>
+</blockquote>
+<ol>
+<li>Search for <em>Topics</em> in the search bar.</li>
+<li>
+<p>Click in <strong>CREATE TOPIC</strong>.</p>
+<p><img alt="ps-1" src="https://i.imgur.com/iy3OUEr.png" /></p>
+</li>
+<li>
+<p>Define your Topic ID and click <strong>CREATE</strong></p>
+<p><img alt="ps-2" src="https://i.imgur.com/vzSAAnv.png" /></p>
+<p>In this case, our Topic ID is <code>ingestion_complete</code>.</p>
+<p>Remember where to find your Topic IDs, it will be useful when instrumenting the python scripts.</p>
+</li>
+<li>
+<p>We have a new topic!</p>
+</li>
+</ol>
+<p><img alt="ps-3" src="https://i.imgur.com/UMjA8xS.png" /></p>
+<p>It automatically creates a subscription, but lets ignore that for now.</p>
+<ol>
+<li>
+<p>If you go back to the Topics page, it should look like this</p>
+<p><img alt="ps-4" src="https://i.imgur.com/JlcQTuU.png" /></p>
+</li>
+</ol>
+<p>Like any other resource, we can also create Topics and Subscriptions with IaC.</p>
+<p>Follow these links for examples for <a href="https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/pubsub_subscription">Terraform</a> and <a href="https://www.pulumi.com/registry/packages/gcp/api-docs/pubsub/subscription/">Pulumi</a>.</p>
+<h2 id="deploy-cloud-functions-gcloud">Deploy Cloud Functions (gcloud)<a class="headerlink" href="#deploy-cloud-functions-gcloud" title="Permanent link">&para;</a></h2>
+<p>In the exercises we will deploy Cloud Functions from a Zip file. For this, we need a bucket specifically for storing the zipped code of the functions. <a href="https://cloud.google.com/functions/docs/deploy#from-cloud-storage">Find more information on GCP documentation</a>, and follow the example in <a href="#buckets-ui">how to create a bucket</a> to create a bucket for the zipped files.</p>
+<ol>
+<li>
+<p>Activate the Cloud Shell</p>
+<p><img alt="cf-d-1" src="https://i.imgur.com/B5CFhbH.png" /></p>
+<p>After a while, you should have a command line in the bottom of your browser. Confirm that you have an active project (green rectangle). If not, contact us.</p>
+<p><img alt="cf-d-2" src="https://i.imgur.com/RQiseeT.png" /></p>
+</li>
+<li>
+<p>Execute the following command:</p>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>functions<span class="w"> </span>deploy<span class="w"> </span><span class="o">[</span>YOUR_FUNCTION_NAME<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--region<span class="o">=</span>europe-west3<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--runtime<span class="o">=</span>python39<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--source<span class="o">=</span>gs://<span class="o">[</span>ZIPPED_FUNCTIONS_BUCKET<span class="o">]</span>/<span class="o">[</span>ZIP_NAME<span class="o">]</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--entry-point<span class="o">=</span>main<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>TRIGGER_FLAGS
+</code></pre></div>
+<p><code>--region</code>: Deployment Region.
+- <a href="https://cloud.google.com/functions/docs/locations">List of Regions</a></p>
+<p><code>--runtime</code>: The execution environment.
+- <a href="https://cloud.google.com/functions/docs/concepts/execution-environment">Available environments</a> (We will use python39)</p>
+<p><code>--source</code>: Source code of the function.
+- There are several ways to access the source code. We will use <a href="https://cloud.google.com/functions/docs/deploy#from-cloud-storage">Deploy from Cloud Storage</a>. But you can deploy from a source repository or directly from a local machine (your PC).</p>
+<p><code>--entry-point</code>: The <em>function/code</em> executed when the <strong>Cloud Function</strong> runs.
+- Learn more here for <a href="https://cloud.google.com/functions/docs/writing/write-event-driven-functions#background-functions">event-driven functions</a> and for <a href="https://cloud.google.com/functions/docs/writing/write-http-functions#implementation">http functions</a>.</p>
+<p><code>TRIGGER_FLAGS</code>: The trigger type of the Cloud Function.
+- See more in the <a href="https://cloud.google.com/functions/docs/deploy#basics">table here</a>.
+- In our case, we will use three trigger types for the three cloud functions. <code>--trigger-bucket</code>, <code>--trigger-topic</code> and <code>--trigger-http</code>.</p>
+<p>If this shows up:</p>
+<p><img alt="cf-d-3" src="https://i.imgur.com/eHgr8me.png" /></p>
+<p>Type <code>y</code></p>
+</li>
+<li>
+<p>Check the status of your deployment.</p>
+<p>Search for Cloud Build</p>
+<p><img alt="cb-1" src="https://i.imgur.com/As8xw0T.png" /></p>
+<p>And check if you are in Region europe-west3. Something similar to this should show up:</p>
+<p><img alt="cb-2" src="https://i.imgur.com/X93WnsX.png" /></p>
+<p>If the cloud function was deployed with success, you'll get a green check</p>
+<p><img alt="cb-3" src="https://i.imgur.com/UG8R4wq.png" /></p>
+<p>Go to the Cloud Functions UI, and check that your function was deployed with success.</p>
+<p><img alt="cf-d-5" src="https://i.imgur.com/WysoDXP.png" /></p>
+<p>You can click the function name and check it's properties, configurations and even source code deployed.</p>
+<p>For example, we can check if the trigger of a cloud function in the <code>Trigger</code> page.</p>
+<p><img alt="cf-d-6" src="https://i.imgur.com/CcbZCDu.png" /></p>
+<p>If your deployment didn't work, let us know and we'll help you.</p>
+</li>
+</ol>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.tabs"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>

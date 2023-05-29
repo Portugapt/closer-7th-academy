@@ -1,0 +1,1013 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../titanic/">
+      
+      
+        <link rel="next" href="../ex2/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.14">
+    
+    
+      
+        <title>Exercise 1 - Closer Academy | GCP</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#load-a-file-from-cloud-storage-to-a-bigquery-table-using-a-cloud-function" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Closer Academy | GCP" class="md-header__button md-logo" aria-label="Closer Academy | GCP" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Closer Academy | GCP
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exercise 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Portugapt/closer-7th-academy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Closer Academy Google Cloud Platform
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Index
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../create_resources/" class="md-tabs__link">
+      Create Resources
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../client_libs_py/" class="md-tabs__link">
+      Client Libraries (Python)
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../titanic/" class="md-tabs__link md-tabs__link--active">
+        Manual Exercises
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Closer Academy | GCP" class="md-nav__button md-logo" aria-label="Closer Academy | GCP" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Closer Academy | GCP
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Portugapt/closer-7th-academy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Closer Academy Google Cloud Platform
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Index
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../create_resources/" class="md-nav__link">
+        Create Resources
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../client_libs_py/" class="md-nav__link">
+        Client Libraries (Python)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Manual Exercises
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Manual Exercises
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../titanic/" class="md-nav__link">
+        Dataset
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Exercise 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Exercise 1
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    Code:
+  </a>
+  
+    <nav class="md-nav" aria-label="Code:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual_exercises.ingest_data.main" class="md-nav__link">
+    main
+  </a>
+  
+    <nav class="md-nav" aria-label="main">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual_exercises.ingest_data.main.main" class="md-nav__link">
+    main()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex2/" class="md-nav__link">
+        Exercise 2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex3/" class="md-nav__link">
+        Exercise 3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ex4/" class="md-nav__link">
+        Exercise 4
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    Code:
+  </a>
+  
+    <nav class="md-nav" aria-label="Code:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual_exercises.ingest_data.main" class="md-nav__link">
+    main
+  </a>
+  
+    <nav class="md-nav" aria-label="main">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual_exercises.ingest_data.main.main" class="md-nav__link">
+    main()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="load-a-file-from-cloud-storage-to-a-bigquery-table-using-a-cloud-function">Load a file from Cloud Storage to a Bigquery Table using a Cloud Function.<a class="headerlink" href="#load-a-file-from-cloud-storage-to-a-bigquery-table-using-a-cloud-function" title="Permanent link">&para;</a></h1>
+<p><img alt="ingestion-architecture" src="../../resources/part_1/ingestion.png" /></p>
+<p>In this exercise, we will create the <code>ingest_data</code> Cloud Function, that will perform the following tasks:</p>
+<ol>
+<li>
+<p>The <code>ingest_data</code> function will actively monitor the <code>my-data-landing-zone</code> Google Cloud Storage bucket for new files. This is achieved by configuring a trigger in the Cloud Function to listen for object creation events in the specified bucket.</p>
+</li>
+<li>
+<p>When a new file is detected, the <code>ingest_data</code> function will read the contents of the file and write the data into a BigQuery table named <code>training_data</code>. The function will leverage the BigQuery Python client library to facilitate this process, efficiently importing the data from the file into the specified table.</p>
+</li>
+<li>
+<p>After successfully importing the data into BigQuery, the <code>ingest_data</code> function will send a message to the <code>ingestion_complete</code> topic in Google Cloud Pub/Sub. This message will notify all subscribers that new data has been loaded into BigQuery, allowing them to react accordingly, such as by initiating further data processing tasks.</p>
+</li>
+</ol>
+<p>The Cloud Function <code>ingest_data</code> will utilize the Google Cloud Storage, BigQuery, and Pub/Sub client libraries for these tasks. Our goal in this exercise is to develop the code for this function and deploy it to Google Cloud Platform.</p>
+<ul>
+<li>You can adapt the function to create flags/categories for TRAIN/TEST/VALIDATION at runtime, assuming your table was created with that field.</li>
+</ul>
+<p>For this you will need these resources:</p>
+<ul>
+<li>One Bigquery <code>data set</code> and one bigquery <code>table</code> (The initial schema is available at <code>./infrastructure/bigquery/titanic_schema.json</code>)</li>
+<li>One GCS Bucket named <code>[prefix]-landing-zone-bucket</code> where you will drop the files once the function is ready</li>
+<li>One GCS Bucket named <code>[prefix]-functions-bucket</code> where you will deploy the function source code from.</li>
+<li>One Topic named <code>[prefix]-ingestion-complete</code>, to where the function will send a message once complete.</li>
+</ul>
+<p>The outline of the <em>Cloud Function</em> code is available at <code>./functions/manual_exercises/ingest_data/</code>.</p>
+<p>Here are the steps you should follow:</p>
+<ol>
+<li>Create Clients: Use the Google Cloud Storage API, BigQuery API, and PubSub API to create respective client objects.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># INSTRUMENTATION [1]: Use the storage API to make a Client Object</span>
+<span class="c1"># INSTRUMENTATION [2]: Use the bigquery API to make a Client Object</span>
+<span class="c1"># INSTRUMENTATION [3]: Use the pubsub_v1 API to make a PublisherClient Object</span>
+</code></pre></div>
+<ol>
+<li>Set Environment Variables: Set your project configurations like project ID, dataset ID, table name, and topic ID.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># IMPLEMENTATION [4]: Set your configurations here</span>
+</code></pre></div>
+<ol>
+<li>Insert Rows into BigQuery: Find the correct method to insert rows as JSON into the BigQuery table.</li>
+<li>Hint: Find all the bigquery <code>Client()</code> <a href="https://cloud.google.com/python/docs/reference/bigquery/latest/google.cloud.bigquery.client.Client">methods here</a></li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="c1"># IMPLEMENTATION [5]: Find the correct method to use here</span>
+</code></pre></div>
+4 . Publish Message: Find the correct method with the PublisherClient to publish a message.
+    - Hint: <a href="https://cloud.google.com/python/docs/reference/pubsublite/latest/google.cloud.pubsublite.cloudpubsub.publisher_client.PublisherClient#google_cloud_pubsublite_cloudpubsub_publisher_client_PublisherClient_publish">PublisherClient</a></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># IMPLEMENTATION [6]: Find the correct method with the PublisherClient to publish a message</span>
+</code></pre></div>
+<ol>
+<li>(Optional) Assign Set Types: You can define a train/test/validation column here. Define that column in your BigQuery table too.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="c1"># OPTIONAL [1]: You can define a train / test / validation column here. Define that column in your BigQuery table too.</span>
+</code></pre></div>
+<p>Deployment:</p>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>functions<span class="w"> </span>deploy<span class="w"> </span>prefix_ingest_data<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--region<span class="o">=</span>europe-west3<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--runtime<span class="o">=</span>python39<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--source<span class="o">=</span>gs://prefix-functions-bucket/ingest_data.zip<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--entry-point<span class="o">=</span>main<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trigger-bucket<span class="o">=</span>prefix-landing-bucket
+</code></pre></div>
+<h2 id="code">Code:<a class="headerlink" href="#code" title="Permanent link">&para;</a></h2>
+<p>Remember, you can still find it in the correct folder.</p>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h3 id="manual_exercises.ingest_data.main" class="doc doc-heading">
+          <code>main</code>
+
+
+<a href="#manual_exercises.ingest_data.main" class="headerlink" title="Permanent link">&para;</a></h3>
+
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h4 id="manual_exercises.ingest_data.main.main" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">main</span><span class="p">(</span><span class="n">event_data</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span></code>
+
+<a href="#manual_exercises.ingest_data.main.main" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Entrypoint of the cloud function</p>
+
+  <p><strong>Parameters:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Default</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>event_data</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>Event payload</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+        <tr>
+          <td><code>context</code></td>
+          <td>
+                <code>dict</code>
+          </td>
+          <td><p>Event context.</p></td>
+          <td>
+              <em>required</em>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+      <p>The --trigger-bucket event_data is the following:
+https://github.com/googleapis/google-cloudevents/blob/main/proto/google/events/cloud/storage/v1/data.proto</p>
+<div class="highlight"><pre><span></span><code><span class="err">eve</span><span class="kc">nt</span><span class="err">_da</span><span class="kc">ta</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">s</span><span class="kc">t</span><span class="err">orageClass</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="err">size</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="err">id</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="err">sel</span><span class="kc">f</span><span class="err">Li</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="kc">t</span><span class="err">imeS</span><span class="kc">t</span><span class="err">orageClassUpda</span><span class="kc">te</span><span class="err">d</span><span class="p">:</span><span class="w"> </span><span class="err">Times</span><span class="kc">ta</span><span class="err">mp</span>
+<span class="w">    </span><span class="err">upda</span><span class="kc">te</span><span class="err">d</span><span class="p">:</span><span class="w"> </span><span class="err">Times</span><span class="kc">ta</span><span class="err">mp</span>
+<span class="w">    </span><span class="err">crc</span><span class="mi">32</span><span class="err">c</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="err">ge</span><span class="kc">nerat</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="kc">t</span><span class="err">imeCrea</span><span class="kc">te</span><span class="err">d</span><span class="p">:</span><span class="w"> </span><span class="err">Times</span><span class="kc">ta</span><span class="err">mp</span>
+<span class="w">    </span><span class="err">mediaLi</span><span class="kc">n</span><span class="err">k</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="err">e</span><span class="kc">ta</span><span class="err">g</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="kc">na</span><span class="err">me</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="err">bucke</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="err">md</span><span class="mi">5</span><span class="err">Hash</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="err">me</span><span class="kc">ta</span><span class="err">ge</span><span class="kc">nerat</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="err">co</span><span class="kc">ntent</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="w">    </span><span class="err">ki</span><span class="kc">n</span><span class="err">d</span><span class="p">:</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The important keys to us now are <code>name</code>, which is the name of the file
+that triggered the event, and <code>bucket</code>, which is the bucket this
+cloud function is listening.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>functions/manual_exercises/ingest_data/main.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span>
+<span class="normal">95</span>
+<span class="normal">96</span>
+<span class="normal">97</span>
+<span class="normal">98</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">event_data</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Entrypoint of the cloud function</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        event_data (dict): Event payload</span>
+<span class="sd">        context (dict): Event context.</span>
+
+<span class="sd">    The --trigger-bucket event_data is the following:</span>
+<span class="sd">    https://github.com/googleapis/google-cloudevents/blob/main/proto/google/events/cloud/storage/v1/data.proto</span>
+
+<span class="sd">    ```json</span>
+<span class="sd">    event_data: {</span>
+<span class="sd">        storageClass: string</span>
+<span class="sd">        size: string</span>
+<span class="sd">        id: string</span>
+<span class="sd">        selfLink: string</span>
+<span class="sd">        timeStorageClassUpdated: Timestamp</span>
+<span class="sd">        updated: Timestamp</span>
+<span class="sd">        crc32c: string</span>
+<span class="sd">        generation: string</span>
+<span class="sd">        timeCreated: Timestamp</span>
+<span class="sd">        mediaLink: string</span>
+<span class="sd">        etag: string</span>
+<span class="sd">        name: string</span>
+<span class="sd">        bucket: string</span>
+<span class="sd">        md5Hash: string</span>
+<span class="sd">        metageneration: string</span>
+<span class="sd">        contentType: string</span>
+<span class="sd">        kind: string</span>
+<span class="sd">    }</span>
+<span class="sd">    ```</span>
+
+<span class="sd">    The important keys to us now are `name`, which is the name of the file</span>
+<span class="sd">    that triggered the event, and `bucket`, which is the bucket this</span>
+<span class="sd">    cloud function is listening.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Clients</span>
+    <span class="c1"># storage_client = # IMPLEMENTATION [1]: Use the storage API to make a Client Object</span>
+    <span class="c1"># bigquery_client = # IMPLEMENTATION [2]: Use the bigquery API to make a Client Object</span>
+    <span class="c1"># publisher = # IMPLEMENTATION [3]: Use the pubsub_b1 API to make a PubliserClient Object</span>
+
+    <span class="c1"># Environment variables</span>
+    <span class="c1"># Note: In a real environment these variables would be passed by environment variables.</span>
+    <span class="c1"># See: https://cloud.google.com/sdk/gcloud/reference/functions/deploy#--env-vars-file</span>
+    <span class="n">project_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Your project ID&quot;</span> <span class="c1"># IMPLEMENTATION [4]: Set your configurations here</span>
+    <span class="n">dataset_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Your Data set ID&quot;</span> <span class="c1"># IMPLEMENTATION [4]: Set your configurations here</span>
+    <span class="n">table_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;Your Table ID&quot;</span> <span class="c1"># IMPLEMENTATION [4]: Set your configurations here</span>
+    <span class="n">topic_ingestion_complete</span> <span class="o">=</span> <span class="s2">&quot;Your Topic ID&quot;</span> <span class="c1"># IMPLEMENTATION [4]: Set your configurations here</span>
+
+    <span class="c1"># Get a reference to the bucket</span>
+    <span class="n">bucket</span><span class="p">:</span> <span class="n">storage</span><span class="o">.</span><span class="n">Bucket</span> <span class="o">=</span> <span class="n">storage_client</span><span class="o">.</span><span class="n">get_bucket</span><span class="p">(</span><span class="n">event_data</span><span class="p">[</span><span class="s1">&#39;bucket&#39;</span><span class="p">])</span>
+    <span class="c1"># The key &#39;bucket&#39; exists in the event_data</span>
+
+    <span class="c1"># The ID of your new GCS object</span>
+    <span class="n">blob</span><span class="p">:</span> <span class="n">storage</span><span class="o">.</span><span class="n">Blob</span> <span class="o">=</span> <span class="n">bucket</span><span class="o">.</span><span class="n">blob</span><span class="p">(</span><span class="n">event_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span>
+
+    <span class="c1"># Iterate over the file</span>
+    <span class="k">with</span> <span class="n">blob</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>  <span class="c1"># Link [1]</span>
+        <span class="c1"># Read the entire content of the file</span>
+        <span class="n">content</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+    <span class="c1"># Split the content by lines</span>
+    <span class="n">lines</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Get the header (column names) from the first line</span>
+    <span class="n">headers</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Iterate through the rest of the lines (the data points)</span>
+    <span class="k">for</span> <span class="n">datapoint</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">errors</span> <span class="o">=</span> <span class="n">bigquery_client</span><span class="o">.</span><span class="n">_</span><span class="p">(</span> <span class="c1"># IMPLEMENTATION [5]: Find the correct method to use here</span>
+            <span class="n">table</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">dataset_id</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span>
+            <span class="n">json_rows</span><span class="o">=</span><span class="p">[</span><span class="n">_transform_datapoint_into_dictionary</span><span class="p">(</span>
+                <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+                <span class="n">datapoint</span><span class="o">=</span><span class="n">datapoint</span><span class="p">)],</span>
+        <span class="p">)</span>
+        <span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+                <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Encountered errors while inserting row&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;errors&quot;</span><span class="p">:</span> <span class="n">errors</span><span class="p">,</span>
+                <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">_transform_datapoint_into_dictionary</span><span class="p">(</span>
+                    <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span>
+                    <span class="n">datapoint</span><span class="o">=</span><span class="n">datapoint</span><span class="p">),</span>
+                <span class="s2">&quot;severity&quot;</span><span class="p">:</span> <span class="s2">&quot;ERROR&quot;</span><span class="p">,</span>
+            <span class="p">}))</span>
+
+    <span class="c1"># Publish the message</span>
+    <span class="c1"># Define the topic path, it&#39;s a string &quot;projects/[PROJECT_ID]/topics/[TOPIC_ID]&quot;</span>
+    <span class="c1"># but the `topic_path` method helps us.</span>
+    <span class="n">topic_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">publisher</span><span class="o">.</span><span class="n">topic_path</span><span class="p">(</span>
+        <span class="n">project_id</span><span class="p">,</span> <span class="n">topic_ingestion_complete</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;I finished ingesting the file </span><span class="si">{</span><span class="n">event_data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">!!&quot;</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
